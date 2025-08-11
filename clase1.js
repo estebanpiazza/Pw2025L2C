@@ -2,6 +2,7 @@ const { LucideFolderMinus } = require("lucide-react");
 
 /* Javascript: variables, tipos de datos (variable, constante, array, objeto), array de objetos, operadores logicos(&& ||), aritmeticos(<>) y matematicos(+- * / ) parseo de datos,thurty y flasy
  */
+"hola"
 let nombre = "Esteban"; // string
 let edad = 1 // Number
 console.log(nombre,edad) // print
