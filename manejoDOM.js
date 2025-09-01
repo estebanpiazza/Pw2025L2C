@@ -5,7 +5,9 @@ nombreUsuario.innerText = "Esteban Piazza"
 
 let textosGenericos = document.getElementsByClassName("textoGenerico")
 
-let imagenesGenericas = document.querySelector(".imagenGenerica")
+nombreUsuario.style.color="blue"
+
+let imagenesGenericas = document.querySelectorAll(".imagenGenerica")
 /* usamos . porque es una clase */
 
 let encabezado = document.querySelector("#nombreUsuario")
