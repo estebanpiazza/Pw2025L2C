@@ -22,12 +22,15 @@ body{}
 }
 
 #colizq {
-display:inline;
-width: 45vw;
+    display: inline-block;
+    width: 45vw;
+    vertical-align: top;
+    margin-right: 2%;
 }
 #colder{
-    display:inline;
+    display: inline-block;
     width: 45vw;
+    vertical-align: top;
 }
 
 #fotoSteve1{
