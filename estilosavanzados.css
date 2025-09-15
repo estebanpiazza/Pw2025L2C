@@ -1,0 +1,60 @@
+/* CSS: Queries y pseudoselectores, flexbox, grid */
+/* Set the background color of body to tan */
+*{border:1px solid red;
+}
+body {
+  background-color: tan;
+}
+#fotoMagica{
+    width: 15vw;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+  body {
+    background-color: blue;
+  }
+  #fotoMagica{
+
+    width: 21vw;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  body {
+    background-color: olive;
+  }
+  #fotoMagica{
+    width: 50vw;
+    display:inline;
+  }
+}
+
+/****flexbox*****/
+
+#cajaFlexible{
+    display:flexbox;
+}
+
+
+.container {  display: grid;
+  grid-template-columns: 50% 1fr;
+  grid-template-rows: 50% 1fr 50%;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  justify-items: stretch;
+  grid-template-areas:
+    "Header Header"
+    "col-izq col-der"
+    "footer footer";
+}
+
+.Header { grid-area: Header; }
+
+.col-izq { grid-area: col-izq; }
+
+.col-der { grid-area: col-der; }
+
+.footer { grid-area: footer; }
