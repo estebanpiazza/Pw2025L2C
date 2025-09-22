@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<input type="text" placeholder="titulo" id="titulo">
+<input type="text" placeholder="director" id="director">
+<input type="text" placeholder="anio" id="anio">
+<input type="text" placeholder="genero" id="genero">
+<input type="checkbox" id="vista"> vista
+<input type="button" value="agregar pelicula" id="agregarPelicula">
+<br> <br>
+<input type="text" placeholder="id a eliminar" id="eliminar"> 
+<input type="button" id="botonEliminar" value="Eliminar">
+<br> <br>
+<input type="text" placeholder="id a marcar como visto" id="visteado"> 
+<input type="button" id="botonVisto" value="marcarVisto">
+<br> <br>
+<input type="text" placeholder="genero a buscar" id="generoBuscado"> 
+<input type="button" id="buscarGenero" value="buscarGenero">
+
+
+, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*Cada película tendrá: título, director, año de estreno, género y vista (true/false).*/ // array de objetos literales
+
+/*La aplicación debe permitir:
+Agregar nuevas películas
+Mostrar todas las películas en una lista
+Marcar películas como vistas / no vistas
+Eliminar películas existentes
+Filtrar películas por género
+Obtener estadísticas básicas
+*/
+/*
+function agregarPelicula(titulo, director, año, genero, vista = false) {}
+function eliminarPelicula() {}
+function marcarComoVista() {}
+function obtenerPeliculas() {}
+function filtrarPorGenero(genero) {}
+function obtenerEstadisticas() {}
+*/
+let id = 0 
+let indiceEncontrado = 0
+let peliculas = []
+//titulo, director, año, genero, vista = false
+function agregarPelicula (){
+  let tituloHTML = document.getElementById("titulo").value
+  let directorHTML = document.getElementById("director").value
+  let anioHTML = document.getElementById("anio").value
+  let generoHTML = document.getElementById("genero").value
+  let vistaHTML = document.getElementById("vista").checked
+ 
+  console.log(tituloHTML)
+  console.log(directorHTML)
+  console.log(anioHTML)
+  console.log(generoHTML)
+  console.log(vistaHTML)
+  let objeto = {
+    id : id,
+    titulo: tituloHTML,
+    director: directorHTML,
+    anio: anioHTML,
+    genero: generoHTML,
+    vista: vistaHTML,
+  }
+  console.log("objeto:")
+  console.log(objeto)
+  peliculas.push(objeto)
+  console.log("peliculas")
+  console.log(peliculas)
+  id+=1
+}
+
+let botonAgregar = document.getElementById("agregarPelicula")
+botonAgregar.addEventListener("click", agregarPelicula)
+
+
+function eliminarPelicula(){
+  let idAEliminar = document.getElementById("eliminar").value
+  console.log("id a eliminar", idAEliminar)
+  for (let i =0 ; i < peliculas.length; i++){
+    if (idAEliminar == peliculas[i].id){
+      console.log("ACA")
+      indiceEncontrado = i
+    }
+    }
+  console.log("indice encontrado:", indiceEncontrado)
+  peliculas.splice(indiceEncontrado,1)
+  console.log("array sin pelicula: ", peliculas)
+  }
+
+let botonEliminar = document.getElementById("botonEliminar")
+botonEliminar.addEventListener("click", eliminarPelicula)
+
+
+function marcarComoVista(){
+  console.log("hola")
+  let idAVisto = document.getElementById("visteado").value
+  for (let i = 0; i<peliculas.length;i++){
+    if (peliculas[i].id == idAVisto){
+      peliculas[i].vista = true
+      console.log(peliculas[i])
+    }
+  }
+ 
+}
+
+let botonVisto = document.getElementById("botonVisto")
+botonVisto.addEventListener("click", marcarComoVista)
+
+
+
+
+
+function buscarPorGenero(){
+  let peliculasFiltradas = []
+  console.log("hola")
+  let generoBuscado = document.getElementById("generoBuscado").value
+  for (let i = 0; i<peliculas.length;i++){
+    if (peliculas[i].genero == generoBuscado){
+        peliculasFiltradas.push(peliculas[i]) 
+    }
+    console.log(peliculasFiltradas)
+  }
+}
+
+let botonBuscar = document.getElementById("buscarGenero")
+botonBuscar.addEventListener("click", buscarPorGenero)
+
+
+</script>
+</html>
