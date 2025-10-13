@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="Nombre" id="nombreUsuario">
+</body>
+<script>
+/*  Javascript:  localstorage / emailJS  / librerias /  import - exprt / JSON y API (online) */
+
+let inputNombre = document.getElementById("nombreUsuario")
+
+inputNombre.addEventListener("input", function(){
+    let nombreUsuario = document.getElementById("nombreUsuario").value
+    localStorage.setItem("nombreDelUsuario", nombreUsuario)
+
+})
+
+let nombreRecuperado = localStorage.getItem("nombreDelUsuario")
+inputNombre.value = nombreRecuperado
+
+let estudiantes = [
+    {nombre:"Juan", apellido: "Perez"},
+    {nombre:"Maria", apellido: "Garcia"},
+]
+
+let estudiantesJson = JSON.stringify(estudiantes)
+console.log(estudiantes)
+console.log(estudiantesJson)
+
+let estudiantesArray = JSON.parse(estudiantesJson)
+console.log(estudiantesArray)
+
+
+</script>
+</html>
